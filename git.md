@@ -81,3 +81,23 @@ $ git tag -a v0.1 -m "version 0.1 released" 1094adb
 
 用命令`git show <tagname>`可以看到说明文字
 
+- 命令`git push origin <tagname>`可以推送一个本地标签；
+- 命令`git push origin --tags`可以推送全部未推送过的本地标签；
+- 命令`git tag -d <tagname>`可以删除一个本地标签；
+- 命令`git push origin :refs/tags/<tagname>`可以删除一个远程标签
+
+当然还有别的命令可以简写，很多人都用`co`表示`checkout`，`ci`表示`commit`，`br`表示`branch`：
+
+```
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+```
+
+以后提交就可以简写成：
+
+```
+$ git ci -m "bala bala bala..."
+```
+
+这里我们也不介绍[Gitolite](https://github.com/sitaramc/gitolite)了，不要把有限的生命浪费到权限斗争中。
